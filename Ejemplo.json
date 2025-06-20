@@ -1,0 +1,25 @@
+{
+    "ID": 1,
+    "NOMBRE": "nombre_de_monstruo",
+    "IMAGEN": "ruta_de_imagen",
+    "ICONO": "ruta_de_icono",
+    "CLASIFICACION": "calsificacion_de_monstruo",
+    "DESCRIPCION": "descripcion_general_del_monstruo",
+    "CONSEJO": "consejo_de_combate_contra_el_monstruo",
+    "LLANOS_VENTOSOS": 0,
+    "BOSQUE_ESCARLATA": 0,
+    "CUENCA_OLEOSA": 0,
+    "ACANTILADOS_ESPINAHELADA": 0,
+    "DEBILIDAD_FUEGO": 0,
+    "DEBILIDAD_AGUA": 0,
+    "DEBILIDAD_ELECTRICIDAD": 0,
+    "DEBILIDAD_HIELO": 0,
+    "DEBILIDAD_DRAGON": 0
+}
+
+{
+    "Administrador_ID": 1,
+    "NOMBRE_DE_USUARIO": "nombre_del_usuario",
+    "CORREO_ELECTRONICO": "correo@ejemplo.com",
+    "CONTRASEÑA": "contraseña_de_usuario"
+}

@@ -1,4 +1,5 @@
 const express = require('express');
+const { default: mongoose } = require('mongoose');
 const multer = require('multer');
 const path = require('path');
 require('dotenv').config();
@@ -6,6 +7,15 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 2025;
 
+//mongoose setup
+const uri = process.env.MONGO_URI;
+mongoose.connect(uri);
+const connection = mongoose.connection;
+connection.once('open', () => {
+    console.log("MongoDB has been connected");
+})
+
+//api key check
 function checkApiKey(req, res, next){
     const apiKey = req.query.api_key;
     if(!apiKey || apiKey != process.env.API_KEY)
@@ -15,6 +25,8 @@ function checkApiKey(req, res, next){
     next();
 }
 
+
+//multer setup
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, process.env.IMAGE_LOCATION)
@@ -32,6 +44,10 @@ app.post('/upload', checkApiKey, upload.single('file'), (req, res) => {
 
 app.use('/image', checkApiKey, express.static(process.env.IMAGE_LOCATION))
 
+const postRouter = require('./rutas/Post.route');
+app.use('/post', checkApiKey, postRouter);
+
 app.listen(port, () => {
     console.log(`server is running on port ${port}`)
 });
+
