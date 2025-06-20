@@ -1,0 +1,109 @@
+/* === Reset global === */
+body {
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* === Header y Footer como en main.css === */
+header {
+  background-color: #222;
+  color: white;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  text-align: center;
+}
+
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+/* === Estilo del formulario === */
+.form {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 2rem auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.form h2 {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.fila {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.fila.tercios .grupo {
+  flex: 1 1 calc(33.333% - 0.67rem);
+  min-width: 200px;
+}
+
+.fila.medios .grupo {
+  flex: 1 1 calc(50% - 0.5rem);
+  min-width: 250px;
+}
+
+.grupo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.grupo label {
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+.grupo input[type="text"],
+.grupo input[type="file"],
+.grupo select,
+.grupo textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  resize: vertical;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.3rem;
+}
+
+.check label {
+  margin: 0;
+}
+
+.acciones {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.acciones button a {
+  color: white;
+  text-decoration: none;
+}
+
+.acciones button a:hover {
+  text-decoration: underline;
+}
