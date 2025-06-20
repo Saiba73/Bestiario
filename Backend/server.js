@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const { default: mongoose } = require('mongoose');
 const multer = require('multer');
 const path = require('path');
@@ -6,6 +7,9 @@ require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 2025;
+
+app.use(cors());
+app.use(express.json());
 
 //mongoose setup
 const uri = process.env.MONGO_URI;
