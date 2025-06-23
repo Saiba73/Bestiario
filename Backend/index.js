@@ -18,7 +18,7 @@ app.listen(3000, () => {
 });
 
 app.get('/', (req, res) => {
-    res.send("Hello from node API update 1");
+    res.send("Hola desde el servidor");
 });
 
 //se conecta a la base de datos en mongoDB

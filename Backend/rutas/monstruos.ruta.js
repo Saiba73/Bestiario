@@ -11,6 +11,6 @@ router.post('/', crearMonstruo);
 
 router.put('/:id', actualizarMonstruo);
 
-router.delete('/:id', borrarMonstruo)
+router.delete('/:id', borrarMonstruo);
 
 module.exports = router;
