@@ -1,15 +1,6 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
-
-
-const MonstruoSchema = mongoose.Schema(
-    {
-    ID:{
-        type: Number,
-        required: true,
-        unique: true
-    },
-
+const monstruoSchema = new mongoose.Schema({
     NOMBRE:{
         type: String,
         required: true,
@@ -50,9 +41,13 @@ const MonstruoSchema = mongoose.Schema(
         minlength: 1
     },
 
+    DIFICULTAD:{
+        type: Number,
+        default: 0
+    },
+
     CONSEJO:{
         type: String,
-        required: true,
         unique: false,
         trim: true,
         minlength: 1
@@ -108,6 +103,6 @@ const MonstruoSchema = mongoose.Schema(
     }
 );
 
-const monstruo = mongoose.model("monstruo", MonstruoSchema);
+const Monstruo = mongoose.model('Monstruo', monstruoSchema);
 
-module.exports = monstruo;
+export default Monstruo;
