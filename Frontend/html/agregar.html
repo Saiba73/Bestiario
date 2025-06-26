@@ -37,12 +37,12 @@
         </div>
       <div class="fila tercios">
         <div class="grupo">
-          <label for="image">Imagen</label>
-          <input type="file" id="image">
+          <label for="imageURL">URL de la Imagen</label>
+          <input type="text" id="imageURL" placeholder="https://ejemplo.com/imagen.png">
         </div>
         <div class="grupo">
-          <label for="icon">Ícono</label>
-          <input type="file" id="icon">
+          <label for="iconURL">URL del Ícono</label>
+          <input type="text" id="iconURL" placeholder="https://ejemplo.com/icono.png">
         </div>
       </div>
 
@@ -58,10 +58,10 @@
         <div class="grupo">
           <label>Debilidades</label>
           <div class="check"><input type="checkbox" id="debFuego"><label for="debFuego">Fuego</label></div>
-          <div class="check"><input type="checkbox" name="debilidades" value="Agua" id="debAgua"><label for="debAgua">Agua</label></div>
-          <div class="check"><input type="checkbox" name="debilidades" value="Hielo" id="debHielo"><label for="debHielo">Hielo</label></div>
-          <div class="check"><input type="checkbox" name="debilidades" value="Trueno" id="debTrueno"><label for="debTrueno">Trueno</label></div>
-          <div class="check"><input type="checkbox" name="debilidades" value="Dragón" id="debDragon"><label for="debDragon">Dragón</label></div>
+          <div class="check"><input type="checkbox" id="debAgua"><label for="debAgua">Agua</label></div>
+          <div class="check"><input type="checkbox" id="debHielo"><label for="debHielo">Hielo</label></div>
+          <div class="check"><input type="checkbox" id="debTrueno"><label for="debTrueno">Trueno</label></div>
+          <div class="check"><input type="checkbox" id="debDragon"><label for="debDragon">Dragón</label></div>
         </div>
       </div>
 
@@ -92,15 +92,10 @@
         <label for="desc">Descripción</label>
         <textarea id="desc" rows="3"></textarea>
       </div>
-      <!-- Consejos -->
-      <div class="grupo">
-        <label for="tip1">Consejo 1</label>
-        <textarea id="tip1" rows="2"></textarea>
-      </div>
-      <div class="grupo">
-        <label for="tip2">Consejo 2</label>
-        <textarea id="tip2" rows="2"></textarea>
-      </div>
+       <div class="grupo">
+          <label for="tip1">Consejo</label>
+          <textarea id="tip1" rows="2"></textarea>
+        </div>
       <!-- Botones -->
       <div class="acciones">
         <button type="submit" class="btn btn-success">Guardar</button>

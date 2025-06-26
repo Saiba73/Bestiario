@@ -10,4 +10,3 @@ router.put("/:id", actualizarMonstruo);
 router.delete("/:id", borrarMonstruo);
 
 export default router;
-
