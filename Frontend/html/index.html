@@ -8,34 +8,56 @@
   <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
-  <header>
-    <h1>Monster Dex</h1>
+  <header class="header">
+    <h1 class="header__title">Monster Dex</h1>
+    <a href="../html/panel.html" class="header__admin-btn">Administrador</a>
   </header>
 
-  <div class="banner">
-    <h2>Bienvenido al catálogo de monstruos de Monster Hunter Wilds!</h2>
-  </div>
+  <section class="banner">
+  </section>
 
-  <div class="intro-text">
-    <p>Aquí encontrarás una colección completa de monstruos del videojuego, clasificados por tipo. ¡Explora y estudia tu próxima presa!</p>
-  </div>
+  <section class="cuerpo" id="cuerpo">
+    <section class="intro">
+      <p class="intro__text"><strong>¡Bienvenido al catálogo de monstruos de Monster Hunter Wilds! </strong><br> Aquí encontrarás una colección completa de monstruos del videojuego, clasificados por tipo. ¡Explora y estudia tu próxima presa!</p>
+    </section>
 
-  <div class="tabs">
-    <button>All</button>
-    <button>Flying Wyvern</button>
-    <button>Amphibian</button>
-  </div>
-
-  <div class="grid-container">
-    <div class="monster-grid">
-      <a href="../html/agregar.html" class="monster-card add-card">
-        <span>+</span>
-      </a>
+    <div class="tabs">
+      <button class="tabs__button">All</button>
+      <button class="tabs__button">Flying Wyvern</button>
+      <button class="tabs__button">Amphibian</button>
     </div>
-  </div>
 
-  <footer>
-    <p>Iván Francisco Aldama Huerta <br> Jesus Alfredo Herrera Delgadillo</p>
+    <div class="monster-grid">
+      <div class="monster-grid__container">
+        <!--<div class="monster-card">
+          <a href="../html/detalles.html" class="monster-card__link">
+            <div class="monster-card__icon">
+              <img src="../img/Monstruos/MHW_Rathalos_Icon.png" alt="Ícono de monstruo" class="monster-card__icon">
+            </div>
+            <h5 class="monster-card__name">Rathalos</h5>
+            <div class="monster-card__clasificacion">Flying Wyvern</div>
+            <div class="monster-card__elements">
+              <img src="../img/Elementos/Fuego.png" alt="Fuego" class="monster-card__element-icon">
+            </div>
+          </a>
+        </div>
+
+        <div class="monster-card">
+          <img src="../img/Monstruos/MHW_Chatacabra_Icon.png" alt="Ícono de monstruo" class="monster-card__icon">
+          <h5 class="monster-card__name">Chatacabra</h5>
+          <div class="monster-card__elements"></div>
+        </div>
+      -->
+
+        <a href="../html/agregar.html" class="monster-card monster-card--add">
+          <span class="monster-card__add-symbol">+</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="footer__text">Monster Dex</p>
   </footer>
 
   <script src="../js/index.js"></script>

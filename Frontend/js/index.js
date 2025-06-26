@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', async () => {
-  const grid = document.querySelector('.monster-grid');
+  const grid = document.querySelector('.monster-grid__container');
   const tabs = document.querySelector('.tabs');
   const clases = new Set();
 
@@ -20,10 +20,11 @@ window.addEventListener('DOMContentLoaded', async () => {
 
       // Enlace a detalles.html con id
       card.innerHTML = `
-        <a href="detalles.html?id=${monstruo._id}">
+        <a href="../html/detalles.html?id=${monstruo._id}">
           <img src="${monstruo.ICONO}" alt="Ícono de monstruo">
           <h5>${monstruo.NOMBRE}</h5>
-          <div class="elementos">
+          <div class="monster-card__clasificacion">${monstruo.CLASSIFICACION}</div>
+          <div class="monster-card__elements">
             ${generarIconos(monstruo)}
           </div>
         </a>
@@ -62,7 +63,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     if (monstruo.DEBILIDAD_ELECTRICIDAD) iconos.push('Trueno');
     if (monstruo.DEBILIDAD_DRAGON) iconos.push('Dragón');
 
-    return iconos.map(el => `<img src="../img/${el}.png" alt="${el}" class="elemento-icono">`).join('');
+    return iconos.map(el => `<img src="../img/Elementos/${el}.png" alt="${el}" class="monster-card__element-icon">`).join('');
   }
 
   function filtrarPorClase(clase) {

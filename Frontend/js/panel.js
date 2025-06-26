@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', async () => {
-  const lista = document.querySelector('.lista');
-  const tabs = document.querySelector('.tabs');
+  const lista = document.querySelector('.panel__list');
+  const tabs = document.querySelector('.tabs__container');
   const clases = new Set();
 
   try {
@@ -12,12 +12,12 @@ window.addEventListener('DOMContentLoaded', async () => {
       const item = document.createElement('div');
       item.className = 'item';
       item.innerHTML = `
-        <img src="${m.ICONO}" alt="Ícono" class="icono">
-        <span class="nombre">${m.NOMBRE}</span>
-        <span class="clase">${m.CLASSIFICACION}</span>
-        <div class="acciones">
-          <button class="editar" data-id="${m._id}">Editar</button>
-          <button class="borrar" data-id="${m._id}">Borrar</button>
+        <img src="${m.ICONO}" alt="Ícono" class="panel__icon">
+        <span class="panel__name">${m.NOMBRE}</span>
+        <span class="panel__class">${m.CLASSIFICACION}</span>
+        <div class="panel__actions">
+          <button class="panel__edit-button" data-id="${m._id}">Editar</button>
+          <button class="panel__delete-button" data-id="${m._id}">Borrar</button>
         </div>
       `;
       lista.appendChild(item);
@@ -34,7 +34,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
     // Eventos para los botones "Borrar"
     lista.addEventListener("click", async (e) => {
-      if (e.target.classList.contains("borrar")) {
+      if (e.target.classList.contains("panel__delete-button")) {
         const id = e.target.dataset.id;
         if (confirm("¿Estás seguro de borrar este monstruo?")) {
           try {

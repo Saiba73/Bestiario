@@ -8,20 +8,21 @@
   <link rel="stylesheet" href="../css/agregar.css">
 </head>
 <body>
-  <header>
-    <h1>Monster Dex</h1>
+  <header class="header">
+    <h1 class="header__title">Monster Dex</h1>
   </header>
 
-  <div class="form">
-    <h2>Agregar Monstruo</h2>
-    <form>
-      <div class="grupo">
-          <label for="name">Nombre</label>
-          <input type="text" id="name" required>
-        </div>
-        <div class="grupo">
-          <label>Clasificación</label>
-          <select id="clasificacion">
+  <div class="formulario">
+    <h2 class="formulario__titulo">Agregar Monstruo</h2>
+    <form class="formulario__form">
+      <div class="formulario__grupo">
+          <label for="nombre" class="formulario__label">Nombre</label>
+          <input type="text" id="nombre" class="formulario__input" required>
+      </div>
+
+      <div class="formulario__grupo">
+          <label class="formulario__label">Clasificación</label>
+          <select id="clasificacion" class="formulario__select">
             <option>Flying Wyvern</option>
             <option>Bird Wyvern</option>
             <option>Brute Wyvern</option>
@@ -34,40 +35,41 @@
             <option>Apex Monster</option>
             <option>Guardian Monster</option>
           </select>
+      </div>
+
+      <div class="formulario__fila formulario__fila--tercios">
+        <div class="formulario__grupo">
+          <label for="imagen" class="formulario__label">Imagen</label>
+          <input type="file" id="imagen" class="formulario__input">
         </div>
-      <div class="fila tercios">
-        <div class="grupo">
-          <label for="imageURL">URL de la Imagen</label>
-          <input type="text" id="imageURL" placeholder="https://ejemplo.com/imagen.png">
-        </div>
-        <div class="grupo">
-          <label for="iconURL">URL del Ícono</label>
-          <input type="text" id="iconURL" placeholder="https://ejemplo.com/icono.png">
+        <div class="formulario__grupo">
+          <label for="icono" class="formulario__label">Ícono</label>
+          <input type="file" id="icono" class="formulario__input">
         </div>
       </div>
 
-      <div class="fila tercios">
-        <div class="grupo">
-          <label>Elementos</label>
-          <div class="check"><input type="checkbox" id="elFuego"><label for="elFuego">Fuego</label></div>
-          <div class="check"><input type="checkbox" name="debilidades" value="Agua" id="debAgua"><label for="debAgua">Agua</label></div>
-          <div class="check"><input type="checkbox" name="debilidades" value="Hielo" id="debHielo"><label for="debHielo">Hielo</label></div>
-          <div class="check"><input type="checkbox" name="debilidades" value="Trueno" id="debTrueno"><label for="debTrueno">Trueno</label></div>
-          <div class="check"><input type="checkbox" name="debilidades" value="Dragón" id="debDragon"><label for="debDragon">Dragón</label></div>
+      <div class="formulario__fila formulario__fila--tercios">
+        <div class="formulario__grupo">
+          <label class="formulario__label">Elementos</label>
+          <div class="formulario__check"><input type="checkbox" id="elFuego"><label for="elFuego">Fuego</label></div>
+          <div class="formulario__check"><input type="checkbox" id="elAgua"><label for="elAgua">Agua</label></div>
+          <div class="formulario__check"><input type="checkbox" id="elHielo"><label for="elHielo">Hielo</label></div>
+          <div class="formulario__check"><input type="checkbox" id="elTrueno"><label for="elTrueno">Trueno</label></div>
+          <div class="formulario__check"><input type="checkbox" id="elDragon"><label for="elDragon">Dragón</label></div>
         </div>
-        <div class="grupo">
-          <label>Debilidades</label>
-          <div class="check"><input type="checkbox" id="debFuego"><label for="debFuego">Fuego</label></div>
-          <div class="check"><input type="checkbox" id="debAgua"><label for="debAgua">Agua</label></div>
-          <div class="check"><input type="checkbox" id="debHielo"><label for="debHielo">Hielo</label></div>
-          <div class="check"><input type="checkbox" id="debTrueno"><label for="debTrueno">Trueno</label></div>
-          <div class="check"><input type="checkbox" id="debDragon"><label for="debDragon">Dragón</label></div>
+        <div class="formulario__grupo">
+          <label class="formulario__label">Debilidades</label>
+          <div class="formulario__check"><input type="checkbox" id="debFuego"><label for="debFuego">Fuego</label></div>
+          <div class="formulario__check"><input type="checkbox" id="debAgua"><label for="debAgua">Agua</label></div>
+          <div class="formulario__check"><input type="checkbox" id="debHielo"><label for="debHielo">Hielo</label></div>
+          <div class="formulario__check"><input type="checkbox" id="debTrueno"><label for="debTrueno">Trueno</label></div>
+          <div class="formulario__check"><input type="checkbox" id="debDragon"><label for="debDragon">Dragón</label></div>
         </div>
       </div>
 
-      <div class="grupo">
-          <label for="dificultad">Dificultad</label>
-          <select id="dificultad">
+      <div class="formulario__grupo">
+          <label for="dificultad" class="formulario__label">Dificultad</label>
+          <select id="dificultad" class="formulario__select">
             <option>★☆☆☆☆</option>
             <option>★★☆☆☆</option>
             <option>★★★☆☆</option>
@@ -75,37 +77,42 @@
             <option>★★★★★</option>
           </select>
       </div>
-     <div class="fila tercios">
-        <div class="fila">
-          <div class="grupo">
-            <label>Hábitat</label>
-            <div class="check"><input type="checkbox" id="habWindward"><label for="habWindward">Windward Plains</label></div>
-            <div class="check"><input type="checkbox" id="habScarlet"><label for="habScarlet">Scarlet Forest</label></div>
-            <div class="check"><input type="checkbox" id="habOilwell"><label for="habOilwell">Oilwell Basin</label></div>
-            <div class="check"><input type="checkbox" id="habIcehard"><label for="habIcehard">Icehard Cliffs</label></div>
-            <div class="check"><input type="checkbox" id="habRuins"><label for="habRuins">Ruins of Wyveria</label></div>
-          </div>
+
+      <div class="formulario__fila formulario__fila--tercios">
+        <div class="formulario__grupo">
+          <label class="formulario__label">Hábitat</label>
+          <div class="formulario__check"><input type="checkbox" id="habWindward"><label for="habWindward">Windward Plains</label></div>
+          <div class="formulario__check"><input type="checkbox" id="habScarlet"><label for="habScarlet">Scarlet Forest</label></div>
+          <div class="formulario__check"><input type="checkbox" id="habOilwell"><label for="habOilwell">Oilwell Basin</label></div>
+          <div class="formulario__check"><input type="checkbox" id="habIcehard"><label for="habIcehard">Icehard Cliffs</label></div>
+          <div class="formulario__check"><input type="checkbox" id="habRuins"><label for="habRuins">Ruins of Wyveria</label></div>
         </div>
-     </div> 
-      <!-- Descripción -->
-      <div class="grupo">
-        <label for="desc">Descripción</label>
-        <textarea id="desc" rows="3"></textarea>
+      </div> 
+
+      <div class="formulario__grupo">
+        <label for="desc" class="formulario__label">Descripción</label>
+        <textarea id="desc" class="formulario__textarea" rows="3"></textarea>
       </div>
-       <div class="grupo">
-          <label for="tip1">Consejo</label>
-          <textarea id="tip1" rows="2"></textarea>
-        </div>
-      <!-- Botones -->
-      <div class="acciones">
-        <button type="submit" class="btn btn-success">Guardar</button>
-        <button type="button" class="btn btn-secondary"><a href="index.html">Cancelar</a> </button>
+
+      <div class="formulario__grupo">
+        <label for="tip1" class="formulario__label">Consejo 1</label>
+        <textarea id="tip1" class="formulario__textarea" rows="2"></textarea>
+      </div>
+
+      <div class="formulario__grupo">
+        <label for="tip2" class="formulario__label">Consejo 2</label>
+        <textarea id="tip2" class="formulario__textarea" rows="2"></textarea>
+      </div>
+
+      <div class="formulario__acciones">
+        <button type="submit" class="formulario__boton btn btn-success">Guardar</button>
+        <button type="button" class="formulario__boton btn btn-secondary"><a href="../html/index.html">Cancelar</a></button>
       </div>
     </form>
   </div>
 
-  <footer>
-    <p>Iván Francisco Aldama Huerta <br> Jesus Alfredo Herrera Delgadillo</p>
+  <footer class="footer">
+    <p class="footer__text">Monster Dex</p>
   </footer>
 
   <script src="../js/agregar.js"></script>
