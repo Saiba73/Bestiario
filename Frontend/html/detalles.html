@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Detalle del Monstruo</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
   <link rel="stylesheet" href="../css/detalles.css" />
 </head>
 <body>
@@ -14,54 +17,41 @@
 
   <div class="detalle">
     <div class="detalle__imagen">
-      <a href="../html/index.html" class="detalle__volver">Volver</a>
-      <img src="https://via.placeholder.com/300x300" alt="Imagen del monstruo" class="detalle__img">
-      <div class="detalle__estrellas">★ ★ ★ ★ ☆</div>
+      <a href="index.html" class="detalle__volver">Volver</a>
+      <img alt="" class="detalle__img">
+      <div class="detalle__estrellas"></div>
     </div>
 
     <div class="detalle__info">
       <h2 class="detalle__titulo">
-        <img src="../img/Monstruos/MHW_Rathalos_Icon.png" alt="Icono del monstruo" class="detalle__icono">
-        Rathalos
+        <img alt="" class="detalle__icono">
+        <span class="detalle__nombre"></span>
       </h2>
 
-      <div class="detalle__elementos">
-        <img src="../img/Elementos/Fuego.png" alt="Fuego" class="detalle__elemento-icono">
-        Fuego
-      </div>
+      <div class="detalle__elementos"></div>
+      <div class="detalle__descripcion"></div>
+      <div class="detalle__grupo"></div>
+      <div class="detalle__grupo"></div>
+      <div class="detalle__tips"></div>
 
-      <div class="detalle__descripcion">
-        <p><strong>Wyvern volador</strong></p>
-        <p>Rathalos es un wyvern volador de fuego, rey de los cielos, conocido por su fiereza y agilidad en combate.</p>
-      </div>
-
-      <div class="detalle__grupo">
-        <strong>Hábitats:</strong>
-        <span class="detalle__tag">Scarlet Forest</span>
-        <span class="detalle__tag">Oilwell Basin</span>
-        <span class="detalle__tag">Ruins of Wyveria</span>
-      </div>
-
-      <div class="detalle__grupo">
-        <strong>Debilidades:</strong>
-        <span class="detalle__tag">Dragón</span>
-      </div>
-
-      <div class="detalle__tips">
-        <strong>Tips de caza:</strong>
-        <p>🛡️ Lleva armadura con resistencia al fuego.</p>
-        <p>🏹 Usa armas de largo alcance para evitar su ataque aéreo.</p>
-      </div>
-
-      <div class="detalle__acciones">
-        <button class="btn btn-danger detalle__boton">Borrar</button>
-        <button class="btn btn-primary detalle__boton"><a href="../html/agregar.html">Editar</a></button>
-      </div>
     </div>
   </div>
 
   <footer class="footer">
     <p class="footer__text">&copy; 2025 MonsterDex. Todos los derechos reservados.</p>
   </footer>
+
+  <script src="../js/detalles.js"></script>
 </body>
 </html>
+
+
+
+<!--
+<div class="detalle__acciones">
+  <button class="btn btn-danger detalle__boton-borrar">Borrar</button>
+  <button class="btn btn-primary detalle__boton-editar">
+  <a href="agregar.html">Editar</a>
+  </button>
+</div>
+-->
