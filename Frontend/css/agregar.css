@@ -1,5 +1,9 @@
 body {
-  background-color: #f4f4f4;
+  background-image: url(../img/Fondos/optional_background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: Arial, sans-serif;
   display: flex;
   flex-direction: column;

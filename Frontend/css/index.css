@@ -10,14 +10,22 @@
   --bronce: #CD7F32;
 }
 
+:root {
+  --fuente-logo: 'MonsterHunter', serif;
+  --fuente-encabezado: 'Trajan Pro', serif;
+  --fuente-texto: 'Lato', sans-serif;
+}
+
+
 body {
   background-color: #f4f4f4;
-  font-family: Arial, sans-serif;
+  font-family: var(--fuente-texto);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
+/* Contenedor del header */
 .header {
   background-color: var(--negro);
   color: white;
@@ -30,8 +38,34 @@ body {
   align-items: center;
 }
 
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header__logo:hover {
+  transform: scale(1.03);
+  filter: drop-shadow(0 4px 8px rgba(241, 205, 0, 0.833));
+}
+
+/* Imagen del logo */
+.header__logo-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.3));
+}
+
+/* Título "Monster Dex" */
 .header__title {
   margin: 0;
+  font-family: var(--fuente-logo, 'MonsterHunter', serif);
+  font-size: 1.8rem;
+  color: var(--crema);
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.2);
 }
 
 .header__admin-btn {
@@ -41,6 +75,8 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 8px;
   font-weight: bold;
+  font-family: var(--fuente-texto);
+  font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -119,6 +155,7 @@ body {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  font-family: var(--fuente-encabezado, bold);
 }
 
 .tabs__button {

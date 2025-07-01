@@ -23,11 +23,11 @@ body {
   flex-direction: column;
 }
 
+/* Contenedor del header */
 .header {
   background-color: var(--negro);
   color: white;
   padding: 1rem;
-  width: 100%;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -36,10 +36,34 @@ body {
   align-items: center;
 }
 
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header__logo:hover {
+  transform: scale(1.03);
+  filter: drop-shadow(0 4px 8px rgba(241, 205, 0, 0.833));
+}
+
+/* Imagen del logo */
+.header__logo-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.3));
+}
+
+/* Título "Monster Dex" */
 .header__title {
   margin: 0;
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-family: var(--fuente-logo, 'MonsterHunter', serif);
+  font-size: 1.8rem;
+  color: var(--crema);
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.2);
 }
 
 .volver-btn {

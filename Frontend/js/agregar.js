@@ -1,15 +1,16 @@
 document.querySelector('form').addEventListener('submit', async function (e) {
   e.preventDefault();
 
-  const name = document.getElementById('name').value.trim();
+  const name = document.getElementById('nombre').value.trim();
   const clasificacion = document.getElementById('clasificacion').value.trim();
   const dificultad = document.getElementById('dificultad').selectedIndex + 1; // 1 a 5
   const desc = document.getElementById('desc').value.trim();
   const tip1 = document.getElementById('tip1').value.trim();
   const tip2 = document.getElementById('tip2').value.trim();
 
-  const image = document.getElementById('imageURL').value.trim();
-  const icon = document.getElementById('iconURL').value.trim();
+  const imageFile = document.getElementById('imagen').files[0];
+  const iconFile = document.getElementById('icono').files[0];
+
 
   const habitat = {
     LLANOS_VENTOSOS: document.getElementById('habWindward').checked,
