@@ -1,15 +1,15 @@
 document.querySelector('form').addEventListener('submit', async function (e) {
   e.preventDefault();
 
-  const name = document.getElementById('nombre').value.trim();
+  const nombre = document.getElementById('nombre').value.trim();
   const clasificacion = document.getElementById('clasificacion').value.trim();
   const dificultad = document.getElementById('dificultad').selectedIndex + 1; // 1 a 5
   const desc = document.getElementById('desc').value.trim();
   const tip1 = document.getElementById('tip1').value.trim();
-  const tip2 = document.getElementById('tip2').value.trim();
+  //const tip2 = document.getElementById('tip2').value.trim();
 
-  const imageFile = document.getElementById('imagen').files[0];
-  const iconFile = document.getElementById('icono').files[0];
+  const imagenURL = document.getElementById('imagen').value.trim();
+  const iconoURL = document.getElementById('icono').value.trim();
 
 
   const habitat = {
@@ -28,13 +28,13 @@ document.querySelector('form').addEventListener('submit', async function (e) {
   };
 
   const monstruo = {
-    NOMBRE: name,
+    NOMBRE: nombre,
     CLASSIFICACION: clasificacion,
     DIFICULTAD: dificultad,
     DESCRIPCION: desc,
-    CONSEJO: `${tip1} ${tip2}`.trim(),
-    IMAGEN: image,
-    ICONO: icon,
+    CONSEJO: tip1.trim(),
+    IMAGEN: imagenURL,
+    ICONO: iconoURL,
     ...habitat,
     ...debilidades
   };
@@ -54,7 +54,7 @@ document.querySelector('form').addEventListener('submit', async function (e) {
       alert("Monstruo creado exitosamente");
       window.location.href = "index.html";
     } else {
-      alert("Error: " + data.message);
+      alert("No se pudo crear el monstruo: " + data.message);
     }
   } catch (err) {
     console.error("Error enviando monstruo:", err.message);

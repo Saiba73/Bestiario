@@ -3,6 +3,9 @@ window.addEventListener('DOMContentLoaded', async () => {
   const id = params.get('id');
   if (!id) return alert('ID de monstruo no especificado.');
 
+  document.querySelector('.volver-btn').setAttribute("href", document.referrer)
+  
+
   try {
     const res = await fetch(`http://localhost:5000/api/monstruos/${id}`);
     if (!res.ok) throw new Error('Monstruo no encontrado');
@@ -63,8 +66,6 @@ window.addEventListener('DOMContentLoaded', async () => {
     alert('No se pudo cargar el detalle.');
   }
 });
-
-
 
     // // Borrar
     // document.querySelector('.detalle__boton-borrar').addEventListener('click', async () => {
