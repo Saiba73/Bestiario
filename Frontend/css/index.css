@@ -11,8 +11,8 @@
 }
 
 :root {
-  --fuente-logo: 'MonsterHunter', serif;
-  --fuente-encabezado: 'Trajan Pro', serif;
+  --fuente-logo: 'Caudex', serif;
+  --fuente-encabezado: 'Cinzel', serif;
   --fuente-texto: 'Lato', sans-serif;
 }
 
@@ -62,7 +62,7 @@ body {
 /* Título "Monster Dex" */
 .header__title {
   margin: 0;
-  font-family: var(--fuente-logo, 'MonsterHunter', serif);
+  font-family: var(--fuente-logo);
   font-size: 1.8rem;
   color: var(--crema);
   text-shadow: 0 0 5px rgba(255, 215, 0, 0.2);
@@ -141,6 +141,9 @@ body {
 .intro__text {
   font-size: 1rem;
   color: var(--hueso);
+  font-family: var(--fuente-texto);
+  font-style: italic;
+  font-weight: 400;
 }
 
 .tabs {
@@ -155,7 +158,7 @@ body {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  font-family: var(--fuente-encabezado, bold);
+  font-family: var(--fuente-encabezado);
 }
 
 .tabs__button {
@@ -165,6 +168,7 @@ body {
   border-radius: 8px;
   cursor: pointer;
   color: var(--cafe);
+  font-family: var(--fuente-encabezado);
   font-weight: bold;
   font-size: 0.9rem;
   transition: all 0.3s ease;
@@ -318,6 +322,7 @@ body {
 
 .monster-card__name {
   font-size: 1.1rem;
+  font-family: var(--fuente-encabezado);
   margin: 0;
   color: var(--hueso);
   font-weight: bold;
@@ -406,6 +411,7 @@ body {
 
 .footer__text {
   margin: 0;
+  font-family: var(--fuente-texto);
 }
 
 .monster-card:hover {

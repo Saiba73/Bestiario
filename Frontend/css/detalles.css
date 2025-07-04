@@ -10,12 +10,19 @@
   --bronce: #CD7F32;
 }
 
+:root {
+  --fuente-logo: 'Caudex', serif;
+  --fuente-encabezado: 'Cinzel', serif;
+  --fuente-texto: 'Lato', sans-serif;
+}
+
+
 body {
   background-image: url('../img/Fondos/background_detalles.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  font-family: Arial, sans-serif;
+  font-family: var(--fuente-texto);
   margin: 0;
   padding: 0;
   min-height: 100vh;
@@ -60,7 +67,7 @@ body {
 /* Título "Monster Dex" */
 .header__title {
   margin: 0;
-  font-family: var(--fuente-logo, 'MonsterHunter', serif);
+  font-family: var(--fuente-logo);
   font-size: 1.8rem;
   color: var(--crema);
   text-shadow: 0 0 5px rgba(255, 215, 0, 0.2);
@@ -79,6 +86,8 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 1.3rem;
+  font-family: var(--fuente-texto);
+  font-weight: bold;
   text-decoration: none;
   box-shadow: 0 2px 6px rgba(0,0,0,0.4);
 }
@@ -161,6 +170,7 @@ body {
   border-radius: 12px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.5);
   color: var(--hueso);
+  font-family: var(--fuente-texto);
 }
 
 .detalle__titulo {
@@ -170,19 +180,52 @@ body {
   margin-bottom: 1rem;
   font-size: 1.8rem;
   font-weight: bold;
+  font-family: var(--fuente-encabezado); 
+  font-weight: 700;
+  font-style: italic;
 }
 
 .detalle__icono {
-  width: 48px;
-  height: 48px;
+  width: 60px;
+  height: 60px;
 }
+
+.detalle__nombre {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.detalle__nombre-texto {
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: var(--fuente-encabezado);
+  color: var(--crema);
+}
+
 
 .detalle__elementos {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
   align-items: center;
-  margin-bottom: 1rem;
 }
+
+.detalle__elemento {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  color: var(--crema);
+  font-family: var(--fuente-encabezado);
+  font-weight: bold;
+  font-size: 0.9rem;
+  white-space: nowrap; /* evita saltos de línea */
+}
+
 
 .detalle__elemento-icono {
   width: 28px;
@@ -193,16 +236,19 @@ body {
 .detalle__grupo,
 .detalle__tips {
   margin-bottom: 1.5rem;
+  font-family: var(--fuente-texto);
+  font-size: 1rem;
 }
 
 .detalle__tag {
   display: inline-block;
-  background-color: var(--oro);
-  color: var(--negro);
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--oro);
   padding: 0.3rem 0.8rem;
   margin: 0.3rem;
   border-radius: 6px;
   font-weight: bold;
+  font-family: var(--fuente-encabezado);
   box-shadow: 0 2px 4px rgba(0,0,0,0.4);
 }
 
@@ -211,6 +257,7 @@ body {
   padding: 1rem;
   border-left: 4px solid var(--verde);
   border-radius: 6px;
+  font-style: italic;
 }
 
 .detalle__tips p {
@@ -230,6 +277,8 @@ body {
 .detalle__boton a {
   color: white;
   text-decoration: none;
+  font-family: var(--fuente-encabezado);
+  font-weight: bold;
 }
 
 
@@ -243,4 +292,6 @@ body {
 
 .footer__text {
   margin: 0;
+  font-family: var(--fuente-texto);
+  font-style: italic;
 }

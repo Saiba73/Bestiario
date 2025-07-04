@@ -10,6 +10,13 @@
   --bronce: #CD7F32;
 }
 
+:root {
+  --fuente-logo: 'Caudex', serif;
+  --fuente-encabezado: 'Cinzel', serif;
+  --fuente-texto: 'Lato', sans-serif;
+}
+
+
 body {
   background-image: url(../img/Fondos/background2.jpg);
   background-size: cover;
