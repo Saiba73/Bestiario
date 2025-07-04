@@ -37,6 +37,19 @@ window.addEventListener('DOMContentLoaded', async () => {
       }
     });
 
+
+    lista.addEventListener('click', (e) => {
+      if (e.target.classList.contains("panel__edit-button")) {
+        const item = e.target.closest('.panel__item');
+        if(item)
+        {
+          const id = item.dataset.id;
+          window.location.href = `../html/editar.html?id=${id}`;
+        }
+
+      }
+    })
+
     // Click en el item para ir a la página de detalles
     lista.addEventListener('click', (e) => {
       const item = e.target.closest('.panel__item');
