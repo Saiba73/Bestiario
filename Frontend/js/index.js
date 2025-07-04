@@ -62,8 +62,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     if (m.DEBILIDAD_ELECTRICIDAD) icons.push('Trueno');
     if (m.DEBILIDAD_DRAGON) icons.push('Dragón');
     return icons
-      .map(el => `<img src="../img/Elementos/${el}.png" alt="${el}" class="monster-card__element-icon">`)
-      .join('');
+      .map(el => `<img src="../img/Elementos/${el}.png" alt="${el}" class="monster-card__element-icon">`).join('');
   }
 
   function filtrar(clase) {
@@ -74,3 +73,26 @@ window.addEventListener('DOMContentLoaded', async () => {
     });
   }
 });
+
+
+monstruos.forEach(m => {
+      const card = document.createElement('div');
+      card.className = 'monster-card';
+      card.innerHTML = `
+        <a href="detalles.html?id=${m._id}" class="monster-card__link">
+          <img
+            src="${m.ICONO}"
+            alt="Ícono de ${m.NOMBRE}"
+            class="monster-card__icon"
+          >
+          <h5 class="monster-card__name">${m.NOMBRE}</h5>
+          <div class="monster-card__clasificacion">${m.CLASSIFICACION}</div>
+          <div class="monster-card__elements">
+            ${generarIconos(m)}
+          </div>
+        </a>
+      `;
+      // Inserta antes del botón “+”
+      gridContainer.insertBefore(card, gridContainer.lastElementChild);
+      clases.add(m.CLASSIFICACION);
+    });
