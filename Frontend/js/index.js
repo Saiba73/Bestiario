@@ -24,7 +24,7 @@ window.addEventListener('DOMContentLoaded', async () => {
           <h5 class="monster-card__name">${m.NOMBRE}</h5>
           <div class="monster-card__clasificacion">${m.CLASSIFICACION}</div>
           <div class="monster-card__elements">
-            ${generarIconos(m)}
+            ${generarIconosElementos(m)}
           </div>
         </a>
       `;
@@ -54,15 +54,16 @@ window.addEventListener('DOMContentLoaded', async () => {
     alert('No se pudieron cargar los monstruos.');
   }
 
-  function generarIconos(m) {
+    function generarIconosElementos(m) {
     const icons = [];
-    if (m.DEBILIDAD_FUEGO) icons.push('Fuego');
-    if (m.DEBILIDAD_AGUA) icons.push('Agua');
-    if (m.DEBILIDAD_HIELO) icons.push('Hielo');
-    if (m.DEBILIDAD_ELECTRICIDAD) icons.push('Trueno');
-    if (m.DEBILIDAD_DRAGON) icons.push('Dragón');
+    if (m.ELEMENTO_FUEGO) icons.push('Fuego');
+    if (m.ELEMENTO_AGUA) icons.push('Agua');
+    if (m.ELEMENTO_HIELO) icons.push('Hielo');
+    if (m.ELEMENTO_ELECTRICIDAD) icons.push('Trueno');
+    if (m.ELEMENTO_DRAGON) icons.push('Dragón');
     return icons
-      .map(el => `<img src="../img/Elementos/${el}.png" alt="${el}" class="monster-card__element-icon">`).join('');
+      .map(el => `<img src="../img/Elementos/${el}.png" alt="${el}" class="monster-card__element-icon">`)
+      .join('');
   }
 
   function filtrar(clase) {
@@ -88,7 +89,7 @@ monstruos.forEach(m => {
           <h5 class="monster-card__name">${m.NOMBRE}</h5>
           <div class="monster-card__clasificacion">${m.CLASSIFICACION}</div>
           <div class="monster-card__elements">
-            ${generarIconos(m)}
+            ${generarIconosElementos(m)}
           </div>
         </a>
       `;

@@ -20,20 +20,24 @@ window.addEventListener('DOMContentLoaded', async () => {
     document.querySelector('.detalle__estrellas').textContent =
       '★'.repeat(m.DIFICULTAD) + '☆'.repeat(5 - m.DIFICULTAD);
 
-    // Elementos de debilidad
+    // Elementos y debilidades
     const elementosDisponibles = ['Fuego', 'Agua', 'Hielo', 'Trueno', 'Dragón'];
+    const elementosAfines = elementosDisponibles.filter(e => m[`ELEMENTO_${e.toUpperCase()}`]);
     const elementosDebiles = elementosDisponibles.filter(e => m[`DEBILIDAD_${e.toUpperCase()}`]);
 
-    // Mostrar nombre + elementos en la misma fila
+
+    // Mostrar nombre + elementos afines en la misma fila
     const nombreContenedor = document.querySelector('.detalle__nombre');
     nombreContenedor.innerHTML = '';
 
+    // Nombre del monstruo
     const nombreTexto = document.createElement('span');
     nombreTexto.textContent = m.NOMBRE;
     nombreTexto.classList.add('detalle__nombre-texto');
     nombreContenedor.appendChild(nombreTexto);
 
-    elementosDebiles.forEach(el => {
+    // Elementos afines (junto al nombre)
+    elementosAfines.forEach(el => {
       const elDiv = document.createElement('div');
       elDiv.classList.add('detalle__elemento');
       elDiv.innerHTML = `

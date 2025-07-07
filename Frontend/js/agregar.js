@@ -19,6 +19,14 @@ document.querySelector('form').addEventListener('submit', async function (e) {
     ACANTILADOS_ESPINAHELADA: document.getElementById('habIcehard').checked
   };
 
+    const elementos = {
+    ELEMENTO_FUEGO: document.getElementById('elemFuego').checked ? 1 : 0,
+    ELEMENTO_AGUA: document.getElementById('elemAgua').checked ? 1 : 0,
+    ELEMENTO_HIELO: document.getElementById('elemHielo').checked ? 1 : 0,
+    ELEMENTO_ELECTRICIDAD: document.getElementById('elemTrueno').checked ? 1 : 0,
+    ELEMENTO_DRAGON: document.getElementById('elemDragon').checked ? 1 : 0
+  };
+
   const debilidades = {
     DEBILIDAD_FUEGO: document.getElementById('debFuego').checked ? 1 : 0,
     DEBILIDAD_AGUA: document.getElementById('debAgua').checked ? 1 : 0,
@@ -36,6 +44,7 @@ document.querySelector('form').addEventListener('submit', async function (e) {
     IMAGEN: imagenURL,
     ICONO: iconoURL,
     ...habitat,
+    ...elementos,
     ...debilidades
   };
 
