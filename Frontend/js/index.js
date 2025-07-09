@@ -10,7 +10,6 @@ window.addEventListener('DOMContentLoaded', async () => {
     if (!res.ok) throw new Error(json.message || 'Error al cargar');
     monstruos = json.data;
 
-    // Renderiza cada tarjeta con enlace a detalles.html?id=...
     monstruos.forEach(m => {
       const card = document.createElement('div');
       card.className = 'monster-card';
@@ -28,12 +27,11 @@ window.addEventListener('DOMContentLoaded', async () => {
           </div>
         </a>
       `;
-      // Inserta antes del botón “+”
       gridContainer.insertBefore(card, gridContainer.lastElementChild);
       clases.add(m.CLASSIFICACION);
     });
 
-    // Crea un botón “All” y luego uno por cada clasificación única
+    // Botones de filtros
     tabsContainer.innerHTML = '';
     const allBtn = document.createElement('button');
     allBtn.textContent = 'All';
@@ -93,7 +91,6 @@ monstruos.forEach(m => {
           </div>
         </a>
       `;
-      // Inserta antes del botón “+”
       gridContainer.insertBefore(card, gridContainer.lastElementChild);
       clases.add(m.CLASSIFICACION);
     });

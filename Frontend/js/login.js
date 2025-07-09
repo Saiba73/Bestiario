@@ -12,7 +12,6 @@ document.getElementById('login-form').addEventListener('submit', async function(
     const data = await res.json();
 
     if (data.success) {
-      // Redirige al panel de administración
       window.location.href = 'panel.html';
     } else {
       alert(data.message || 'Credenciales inválidas');

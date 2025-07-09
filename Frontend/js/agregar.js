@@ -6,7 +6,6 @@ document.querySelector('form').addEventListener('submit', async function (e) {
   const dificultad = document.getElementById('dificultad').selectedIndex + 1;
   const desc = document.getElementById('desc').value.trim();
   const tip1 = document.getElementById('tip1').value.trim();
-  //const tip2 = document.getElementById('tip2').value.trim();
 
   const imagenURL = document.getElementById('imagen').value.trim();
   const iconoURL = document.getElementById('icono').value.trim();
