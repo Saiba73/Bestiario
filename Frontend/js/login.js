@@ -10,13 +10,10 @@ document.getElementById('login-form').addEventListener('submit', async function(
       body: JSON.stringify({ username, password })
     });
     const data = await res.json();
-
+    
     if (data.success) {
-<<<<<<< HEAD
       localStorage.setItem('isLoggedIn', 'true');
       // Redirige al panel de administración
-=======
->>>>>>> ee197b99496107918ed0c338c48605b73f054303
       window.location.href = 'panel.html';
     } else {
       alert(data.message || 'Credenciales inválidas');

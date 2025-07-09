@@ -34,10 +34,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     if (!res.ok) throw new Error(json.message || 'Error al cargar');
     monstruos = json.data;
 
-<<<<<<< HEAD
     // Renderizar monstruos
-=======
->>>>>>> ee197b99496107918ed0c338c48605b73f054303
     monstruos.forEach(m => {
       const card = document.createElement('div');
       card.className = 'monster-card';
@@ -55,19 +52,12 @@ window.addEventListener('DOMContentLoaded', async () => {
           </div>
         </a>
       `;
-<<<<<<< HEAD
       // Inserta antes del botón "+"
-=======
->>>>>>> ee197b99496107918ed0c338c48605b73f054303
       gridContainer.insertBefore(card, gridContainer.lastElementChild);
       clases.add(m.CLASSIFICACION);
     });
 
-<<<<<<< HEAD
     // Tabs dinámicos
-=======
-    // Botones de filtros
->>>>>>> ee197b99496107918ed0c338c48605b73f054303
     tabsContainer.innerHTML = '';
     const allBtn = document.createElement('button');
     allBtn.textContent = 'All';
@@ -107,9 +97,6 @@ window.addEventListener('DOMContentLoaded', async () => {
       card.style.display = (clase === 'All' || textoClase === clase) ? 'block' : 'none';
     });
   }
-<<<<<<< HEAD
-});
-=======
 });
 
 
@@ -133,4 +120,3 @@ monstruos.forEach(m => {
       gridContainer.insertBefore(card, gridContainer.lastElementChild);
       clases.add(m.CLASSIFICACION);
     });
->>>>>>> ee197b99496107918ed0c338c48605b73f054303
