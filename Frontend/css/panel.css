@@ -42,19 +42,83 @@ body::before {
   z-index: -1;
 }
 
+/* Contenedor del header */
 .header {
   background-color: var(--negro);
   color: white;
   padding: 1rem;
-  text-align: center;
   position: sticky;
   top: 0;
   z-index: 100;
-  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header__logo:hover {
+  transform: scale(1.03);
+  filter: drop-shadow(0 4px 8px rgba(241, 205, 0, 0.833));
+}
+
+/* Imagen del logo */
+.header__logo-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.3));
+}
+
+/* Título "Monster Dex" */
 .header__title {
   margin: 0;
+  font-family: var(--fuente-logo);
+  font-size: 1.8rem;
+  color: var(--crema);
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.2);
+}
+
+.header__admin-btn {
+  position: relative;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: 1rem;
+  font-family: var(--fuente-texto);
+  font-size: 1rem;
+  color: var(--crema);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-weight: normal;
+}
+
+.header__admin-btn::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: var(--oro);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.header__admin-btn:hover {
+  color: var(--oro);
+}
+
+.header__admin-btn:hover::after {
+  transform: scaleX(1);
 }
 
 .panel {
@@ -191,6 +255,15 @@ body::before {
 .panel__item:hover {
   transform: scale(1.0);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(232, 170, 39, 0.3);
+  border-color: var(--oro);
+}
+
+.panel__icon:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 8px rgba(232, 170, 39, 0.5));
 }
 
 .panel__item::before {
@@ -330,6 +403,7 @@ body::before {
   box-shadow: 
     0 8px 16px rgba(0, 0, 0, 0.6),
     0 0 20px rgba(118, 221, 143, 0.4);
+  color: var(--crema);
 }
 
 .panel__add-symbol {

@@ -69,25 +69,39 @@ body {
 }
 
 .header__admin-btn {
-  background: linear-gradient(135deg, var(--amarillo), var(--naranja));
-  color: var(--negro);
+  position: relative;
+  background: none;
   border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-weight: bold;
+  padding: 0;
+  margin-left: 1rem;
   font-family: var(--fuente-texto);
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  color: var(--crema);
   text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-weight: normal;
+}
+
+.header__admin-btn::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: var(--oro);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
 }
 
 .header__admin-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(135deg, var(--naranja), var(--amarillo));
-  transition: 0.3s ease;
+  color: var(--oro);
+}
+
+.header__admin-btn:hover::after {
+  transform: scaleX(1);
 }
 
 .banner {
@@ -356,6 +370,11 @@ body {
   position: relative;
   overflow: hidden;
 }
+
+.d-none {
+  display: none !important;
+}
+
 
 .monster-card--add::before {
   content: '';

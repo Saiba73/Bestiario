@@ -12,6 +12,7 @@ document.getElementById('login-form').addEventListener('submit', async function(
     const data = await res.json();
 
     if (data.success) {
+      localStorage.setItem('isLoggedIn', 'true');
       // Redirige al panel de administración
       window.location.href = 'panel.html';
     } else {

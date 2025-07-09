@@ -89,4 +89,9 @@ window.addEventListener('DOMContentLoaded', async () => {
     console.error("Error al obtener monstruos:", err.message);
     alert("Error al cargar los datos del servidor");
   }
+    // Evento para cerrar sesión desde el panel
+  document.getElementById('logout-btn')?.addEventListener('click', () => {
+    localStorage.removeItem('isLoggedIn');
+    window.location.href = '../html/index.html';
+  });
 });
