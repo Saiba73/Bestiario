@@ -3,7 +3,7 @@ document.querySelector('form').addEventListener('submit', async function (e) {
 
   const nombre = document.getElementById('nombre').value.trim();
   const clasificacion = document.getElementById('clasificacion').value.trim();
-  const dificultad = document.getElementById('dificultad').selectedIndex + 1; // 1 a 5
+  const dificultad = document.getElementById('dificultad').selectedIndex + 1;
   const desc = document.getElementById('desc').value.trim();
   const tip1 = document.getElementById('tip1').value.trim();
   //const tip2 = document.getElementById('tip2').value.trim();
@@ -20,19 +20,19 @@ document.querySelector('form').addEventListener('submit', async function (e) {
   };
 
     const elementos = {
-    ELEMENTO_FUEGO: document.getElementById('elemFuego').checked ? 1 : 0,
-    ELEMENTO_AGUA: document.getElementById('elemAgua').checked ? 1 : 0,
-    ELEMENTO_HIELO: document.getElementById('elemHielo').checked ? 1 : 0,
-    ELEMENTO_ELECTRICIDAD: document.getElementById('elemTrueno').checked ? 1 : 0,
-    ELEMENTO_DRAGON: document.getElementById('elemDragon').checked ? 1 : 0
+    ELEMENTO_FUEGO: document.getElementById('elemFuego').checked,
+    ELEMENTO_AGUA: document.getElementById('elemAgua').checked,
+    ELEMENTO_HIELO: document.getElementById('elemHielo').checked,
+    ELEMENTO_ELECTRICIDAD: document.getElementById('elemTrueno').checked,
+    ELEMENTO_DRAGON: document.getElementById('elemDragon').checked
   };
 
   const debilidades = {
-    DEBILIDAD_FUEGO: document.getElementById('debFuego').checked ? 1 : 0,
-    DEBILIDAD_AGUA: document.getElementById('debAgua').checked ? 1 : 0,
-    DEBILIDAD_HIELO: document.getElementById('debHielo').checked ? 1 : 0,
-    DEBILIDAD_ELECTRICIDAD: document.getElementById('debTrueno').checked ? 1 : 0,
-    DEBILIDAD_DRAGON: document.getElementById('debDragon').checked ? 1 : 0
+    DEBILIDAD_FUEGO: document.getElementById('debFuego').checked,
+    DEBILIDAD_AGUA: document.getElementById('debAgua').checked,
+    DEBILIDAD_HIELO: document.getElementById('debHielo').checked,
+    DEBILIDAD_ELECTRICIDAD: document.getElementById('debTrueno').checked,
+    DEBILIDAD_DRAGON: document.getElementById('debDragon').checked
   };
 
   const monstruo = {

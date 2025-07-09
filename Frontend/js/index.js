@@ -60,7 +60,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     if (m.ELEMENTO_AGUA) icons.push('Agua');
     if (m.ELEMENTO_HIELO) icons.push('Hielo');
     if (m.ELEMENTO_ELECTRICIDAD) icons.push('Trueno');
-    if (m.ELEMENTO_DRAGON) icons.push('Dragón');
+    if (m.ELEMENTO_DRAGON) icons.push('Dragon');
     return icons
       .map(el => `<img src="../img/Elementos/${el}.png" alt="${el}" class="monster-card__element-icon">`)
       .join('');

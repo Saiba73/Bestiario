@@ -21,9 +21,9 @@ window.addEventListener('DOMContentLoaded', async () => {
       '★'.repeat(m.DIFICULTAD) + '☆'.repeat(5 - m.DIFICULTAD);
 
     // Elementos y debilidades
-    const elementosDisponibles = ['Fuego', 'Agua', 'Hielo', 'Trueno', 'Dragón'];
-    const elementosAfines = elementosDisponibles.filter(e => m[`ELEMENTO_${e.toUpperCase()}`]);
-    const elementosDebiles = elementosDisponibles.filter(e => m[`DEBILIDAD_${e.toUpperCase()}`]);
+    // const elementosDisponibles = ['Fuego', 'Agua', 'Hielo', 'Trueno', 'Dragon'];
+    // const elementosAfines = elementosDisponibles.filter(e => m[`ELEMENTO_${e.toUpperCase()}`]);
+    // const elementosDebiles = elementosDisponibles.filter(e => m[`DEBILIDAD_${e.toUpperCase()}`]);
 
 
     // Mostrar nombre + elementos afines en la misma fila
@@ -36,8 +36,16 @@ window.addEventListener('DOMContentLoaded', async () => {
     nombreTexto.classList.add('detalle__nombre-texto');
     nombreContenedor.appendChild(nombreTexto);
 
+    const elem = [];
+    if (m.ELEMENTO_FUEGO) elem.push('Fuego');
+    if (m.ELEMENTO_AGUA) elem.push('Agua');
+    if (m.ELEMENTO_HIELO) elem.push('Hielo');
+    if (m.ELEMENTO_ELECTRICIDAD) elem.push('Trueno');
+    if (m.ELEMENTO_DRAGON) elem.push('Dragon');
+
+
     // Elementos afines (junto al nombre)
-    elementosAfines.forEach(el => {
+    elem.forEach(el => {
       const elDiv = document.createElement('div');
       elDiv.classList.add('detalle__elemento');
       elDiv.innerHTML = `
@@ -70,8 +78,16 @@ window.addEventListener('DOMContentLoaded', async () => {
       </span>
     `).join('')}`;
 
+
+    const debs = [];
+    if (m.DEBILIDAD_FUEGO) debs.push('Fuego');
+    if (m.DEBILIDAD_AGUA) debs.push('Agua');
+    if (m.DEBILIDAD_HIELO) debs.push('Hielo');
+    if (m.DEBILIDAD_ELECTRICIDAD) debs.push('Trueno');
+    if (m.DEBILIDAD_DRAGON) debs.push('Dragon');
+
     // Debilidades en grupo con ícono + nombre
-    grupos[1].innerHTML = `<strong>Debilidades:</strong> ${elementosDebiles.map(d => `
+    grupos[1].innerHTML = `<strong>Debilidades:</strong> ${debs.map(d => `
       <span class="detalle__tag">
         <img src="../img/Elementos/${d}.png" alt="${d}" class="detalle__elemento-icono" style="vertical-align: middle; width: 20px; height: 20px; margin-right: 4px;">
         ${d}

@@ -73,29 +73,54 @@ const monstruoSchema = new mongoose.Schema({
         default: false
     },
 
+    ELEMENTO_FUEGO:{
+        type: Boolean,
+        default: false
+    },
+
+    ELEMENTO_AGUA:{
+        type: Boolean,
+        default: false
+    },
+
+    ELEMENTO_HIELO:{
+        type: Boolean,
+        default: false
+    },
+
+    ELEMENTO_ELECTRICIDAD:{
+        type: Boolean,
+        default: false
+    },
+
+    ELEMENTO_DRAGON:{
+        type: Boolean,
+        default: false
+    },
+
     DEBILIDAD_FUEGO:{
-        type: Number,
-        default: 0
+        type: Boolean,
+        default: false
     },
 
     DEBILIDAD_AGUA:{
-        type: Number,
-        default: 0
+        type: Boolean,
+        default: false
     },
 
     DEBILIDAD_ELECTRICIDAD:{
-        type: Number,
-        default: 0
+        type: Boolean,
+        default: false
     },
 
     DEBILIDAD_HIELO:{
-        type: Number,
-        default: 0
+        type: Boolean,
+        default: false
     },
 
     DEBILIDAD_DRAGON:{
-        type: Number,
-        default: 0
+        type: Boolean,
+        default: false
     }
 });
 
