@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     monstruos.forEach(m => {
       const item = document.createElement('div');
       item.className = 'panel__item';
-      item.setAttribute('data-id', m._id); // <== nuevo atributo para redirigr
+      item.setAttribute('data-id', m._id);
       item.innerHTML = `
         <img src="${m.ICONO}" alt="Ícono" class="panel__icon">
         <span class="panel__name">${m.NOMBRE}</span>
@@ -22,12 +22,10 @@ window.addEventListener('DOMContentLoaded', async () => {
           <button class="panel__delete-button" data-id="${m._id}">Borrar</button>
         </div>
       `;
-      // Insertar antes del botón de agregar
       lista.insertBefore(item, addBtn);
       clases.add(m.CLASSIFICACION);
     });
 
-    // Crear tabs dinámicos por clase
     clases.forEach(cl => {
       if (!Array.from(tabs.children).some(btn => btn.textContent === cl)) {
         const btn = document.createElement('button');
@@ -50,7 +48,7 @@ window.addEventListener('DOMContentLoaded', async () => {
       }
     })
 
-    // Click en el item para ir a la página de detalles
+    // Click en el monstruo para ver sus detalles
     lista.addEventListener('click', (e) => {
       const item = e.target.closest('.panel__item');
       if (item && !e.target.classList.contains('panel__edit-button') && !e.target.classList.contains('panel__delete-button')) {
@@ -59,7 +57,7 @@ window.addEventListener('DOMContentLoaded', async () => {
       }
     });
 
-    // Eventos para los botones "Borrar"
+    // Eventos para cuando se presiona borrar
     lista.addEventListener("click", async (e) => {
       if (e.target.classList.contains("panel__delete-button")) {
         const id = e.target.dataset.id;
@@ -82,7 +80,6 @@ window.addEventListener('DOMContentLoaded', async () => {
         }
       }
 
-      // Si haces la parte de "Editar", también puedes usar dataset.id
     });
 
   } catch (err) {

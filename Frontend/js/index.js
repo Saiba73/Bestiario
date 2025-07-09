@@ -34,7 +34,10 @@ window.addEventListener('DOMContentLoaded', async () => {
     if (!res.ok) throw new Error(json.message || 'Error al cargar');
     monstruos = json.data;
 
+<<<<<<< HEAD
     // Renderizar monstruos
+=======
+>>>>>>> ee197b99496107918ed0c338c48605b73f054303
     monstruos.forEach(m => {
       const card = document.createElement('div');
       card.className = 'monster-card';
@@ -52,12 +55,19 @@ window.addEventListener('DOMContentLoaded', async () => {
           </div>
         </a>
       `;
+<<<<<<< HEAD
       // Inserta antes del botón "+"
+=======
+>>>>>>> ee197b99496107918ed0c338c48605b73f054303
       gridContainer.insertBefore(card, gridContainer.lastElementChild);
       clases.add(m.CLASSIFICACION);
     });
 
+<<<<<<< HEAD
     // Tabs dinámicos
+=======
+    // Botones de filtros
+>>>>>>> ee197b99496107918ed0c338c48605b73f054303
     tabsContainer.innerHTML = '';
     const allBtn = document.createElement('button');
     allBtn.textContent = 'All';
@@ -97,4 +107,30 @@ window.addEventListener('DOMContentLoaded', async () => {
       card.style.display = (clase === 'All' || textoClase === clase) ? 'block' : 'none';
     });
   }
+<<<<<<< HEAD
 });
+=======
+});
+
+
+monstruos.forEach(m => {
+      const card = document.createElement('div');
+      card.className = 'monster-card';
+      card.innerHTML = `
+        <a href="detalles.html?id=${m._id}" class="monster-card__link">
+          <img
+            src="${m.ICONO}"
+            alt="Ícono de ${m.NOMBRE}"
+            class="monster-card__icon"
+          >
+          <h5 class="monster-card__name">${m.NOMBRE}</h5>
+          <div class="monster-card__clasificacion">${m.CLASSIFICACION}</div>
+          <div class="monster-card__elements">
+            ${generarIconosElementos(m)}
+          </div>
+        </a>
+      `;
+      gridContainer.insertBefore(card, gridContainer.lastElementChild);
+      clases.add(m.CLASSIFICACION);
+    });
+>>>>>>> ee197b99496107918ed0c338c48605b73f054303
