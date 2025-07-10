@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon Backend/server.js"
+    "dev": "NODE_ENV=development Backend/server.js",
+    "build": "npm install",
+    "start": "NODE_ENV=production node Backend/server.js"
   },
   "keywords": [],
   "author": "",
