@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', async () => {
   const gridContainer = document.querySelector('.monster-grid__container');
-  const tabsContainer = document.querySelector('.tabs');
+  const tabsContainer = document.querySelector('.tabs__container');
   const clases = new Set();
   //Manejar inicio de sesión
   const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';

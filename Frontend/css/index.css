@@ -27,7 +27,10 @@ body {
 
 /* Contenedor del header */
 .header {
-  background-color: var(--negro);
+  background-image: url(../img/Fondos/header_background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: white;
   padding: 1rem;
   position: sticky;
@@ -160,7 +163,7 @@ body {
   font-weight: 400;
 }
 
-.tabs {
+.tabs__container {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
@@ -318,12 +321,13 @@ body {
   filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.8));
 }
 
-.monster-card__link {
+.monster-card a {
   text-decoration: none;
-  color: var(--hueso);
+  color: var(--crema);
   display: block;
   position: relative;
   z-index: 2;
+  font-style: italic;
 }
 
 .monster-card__icon {

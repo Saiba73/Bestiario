@@ -44,7 +44,10 @@ body::before {
 
 /* Contenedor del header */
 .header {
-  background-color: var(--negro);
+  background-image: url(../img/Fondos/header_background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: white;
   padding: 1rem;
   position: sticky;
@@ -300,6 +303,7 @@ body::before {
   flex: 1;
   font-weight: bold;
   text-shadow: 1px 1px 2px black;
+  font-family: var(--fuente-encabezado);
 }
 
 .panel__class {

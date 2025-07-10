@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', async () => {
   const lista = document.querySelector('.panel__list');
   const addBtn = document.querySelector('.panel__add');
-  const tabs = document.querySelector('.tabs__container');
+  const tabs = document.querySelector('.tabs__container'); // ✅ Aquí se usa correctamente
   const clases = new Set();
 
   try {
@@ -9,6 +9,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     const data = await res.json();
     const monstruos = data.data || [];
 
+    // Renderizado
     monstruos.forEach(m => {
       const item = document.createElement('div');
       item.className = 'panel__item';
@@ -26,29 +27,43 @@ window.addEventListener('DOMContentLoaded', async () => {
       clases.add(m.CLASSIFICACION);
     });
 
+    // Limpiar y crear tabs
+    tabs.innerHTML = '';
+
+    const allBtn = document.createElement('button');
+    allBtn.className = 'tabs__button';
+    allBtn.textContent = 'All';
+    allBtn.addEventListener('click', () => filtrar('All'));
+    tabs.appendChild(allBtn);
+
     clases.forEach(cl => {
-      if (!Array.from(tabs.children).some(btn => btn.textContent === cl)) {
-        const btn = document.createElement('button');
-        btn.className = 'tabs__button';
-        btn.textContent = cl;
-        tabs.appendChild(btn);
-      }
+      const btn = document.createElement('button');
+      btn.className = 'tabs__button';
+      btn.textContent = cl;
+      btn.addEventListener('click', () => filtrar(cl));
+      tabs.appendChild(btn);
     });
 
+    // Función para filtrar por clase
+    function filtrar(clase) {
+      document.querySelectorAll('.panel__item').forEach(card => {
+        const textoClase = card.querySelector('.panel__class')?.textContent;
+        card.style.display = (clase === 'All' || textoClase === clase) ? 'flex' : 'none';
+      });
+    }
 
+    // Click en editar
     lista.addEventListener('click', (e) => {
       if (e.target.classList.contains("panel__edit-button")) {
         const item = e.target.closest('.panel__item');
-        if(item)
-        {
+        if (item) {
           const id = item.dataset.id;
           window.location.href = `../html/editar.html?id=${id}`;
         }
-
       }
-    })
+    });
 
-    // Click en el monstruo para ver sus detalles
+    // Click en detalles
     lista.addEventListener('click', (e) => {
       const item = e.target.closest('.panel__item');
       if (item && !e.target.classList.contains('panel__edit-button') && !e.target.classList.contains('panel__delete-button')) {
@@ -57,7 +72,7 @@ window.addEventListener('DOMContentLoaded', async () => {
       }
     });
 
-    // Eventos para cuando se presiona borrar
+    // Click en borrar
     lista.addEventListener("click", async (e) => {
       if (e.target.classList.contains("panel__delete-button")) {
         const id = e.target.dataset.id;
@@ -69,7 +84,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
             if (res.ok) {
               alert("Monstruo eliminado correctamente");
-              e.target.closest(".item").remove();
+              e.target.closest(".panel__item")?.remove(); // ✅ corregido
             } else {
               const data = await res.json();
               alert("Error: " + data.message);
@@ -79,14 +94,14 @@ window.addEventListener('DOMContentLoaded', async () => {
           }
         }
       }
-
     });
 
   } catch (err) {
     console.error("Error al obtener monstruos:", err.message);
     alert("Error al cargar los datos del servidor");
   }
-    // Evento para cerrar sesión desde el panel
+
+  // Cerrar sesión
   document.getElementById('logout-btn')?.addEventListener('click', () => {
     localStorage.removeItem('isLoggedIn');
     window.location.href = '../html/index.html';

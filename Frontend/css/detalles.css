@@ -22,6 +22,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: var(--fuente-texto);
   margin: 0;
   padding: 0;
@@ -32,7 +33,10 @@ body {
 
 /* Contenedor del header */
 .header {
-  background-color: var(--negro);
+  background-image: url(../img/Fondos/header_background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: white;
   padding: 1rem;
   position: sticky;
@@ -274,13 +278,41 @@ body {
   flex: 1;
 }
 
-.detalle__boton a {
-  color: white;
-  text-decoration: none;
-  font-family: var(--fuente-encabezado);
-  font-weight: bold;
+.detalle__boton-borrar,
+.detalle__boton-editar {
+  display: none;
 }
 
+.detalle__boton-editar {
+  background: var(--naranja);
+  border: none;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.detalle__boton-borrar {
+  background: red;
+  border: none;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.detalle__boton-editar:hover {
+  background: var(--amarillo);
+  color: black;
+}
+
+.detalle__boton-borrar:hover {
+  background: #b23200;
+}
 
 .footer {
   background-color: var(--negro);

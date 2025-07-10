@@ -101,15 +101,39 @@ window.addEventListener('DOMContentLoaded', async () => {
     console.error(err);
     alert('No se pudo cargar el detalle.');
   }
+
+  // Mostrar botones de edición si hay sesión
+  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+  const deleteButton = document.getElementById('detalle__boton-borrar');
+  const editButton = document.getElementById('detalle__boton-editar');
+
+  if (isLoggedIn) {
+    deleteButton.style.display = 'inline-block';
+    editButton.style.display = 'inline-block';
+
+    // Evento borrar
+    deleteButton.addEventListener('click', async () => {
+      if (!confirm('¿Borrar este monstruo?')) return;
+      try {
+        const res = await fetch(`http://localhost:5000/api/monstruos/${id}`, {
+          method: 'DELETE'
+        });
+        if (res.ok) {
+          alert('Monstruo eliminado');
+          window.location.href = 'index.html';
+        } else {
+          const err = await res.json();
+          alert('Error al borrar: ' + err.message);
+        }
+      } catch (err) {
+        alert('Error al borrar');
+        console.error(err);
+      }
+    });
+
+    // Evento editar
+    editButton.addEventListener('click', () => {
+      window.location.href = `editar.html?id=${id}`;
+    });
+  }
 });
-
- // // Borrar
-    // document.querySelector('.detalle__boton-borrar').addEventListener('click', async () => {
-    //   if (!confirm('¿Borrar este monstruo?')) return;
-    //   const del = await fetch(http://localhost:5000/api/monstruos/${id}, { method: 'DELETE' });
-    //   if (del.ok) return window.location.href = 'index.html';
-    //   alert('Error al borrar');
-    // });
-
-    // // Editar
-    // document.querySelector('.detalle__boton-editar a').href = agregar.html?id=${id};

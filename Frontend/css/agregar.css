@@ -43,7 +43,10 @@ body::before {
 }
 
 .header {
-  background-color: var(--negro);
+  background-image: url(../img/Fondos/header_background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: white;
   padding: 1rem;
   position: sticky;
