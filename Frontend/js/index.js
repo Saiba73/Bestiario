@@ -29,7 +29,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   });
 
   try {
-    const res = await fetch('http://localhost:5000/api/monstruos');
+    const res = await fetch('/api/monstruos');
     const json = await res.json();
     if (!res.ok) throw new Error(json.message || 'Error al cargar');
     monstruos = json.data;
