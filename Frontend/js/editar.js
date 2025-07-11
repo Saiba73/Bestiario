@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   try {
     
-    const res = await fetch(`http://localhost:5000/api/monstruos/${id}`);
+    const res = await fetch(`/api/monstruos/${id}`);
     if (!res.ok) throw new Error('Monstruo no encontrado');
 
     const responseJson = await res.json();

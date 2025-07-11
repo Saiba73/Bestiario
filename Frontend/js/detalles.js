@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   document.querySelector('.volver-btn').setAttribute("href", document.referrer);
 
   try {
-    const res = await fetch(`http://localhost:5000/api/monstruos/${id}`);
+    const res = await fetch(`/api/monstruos/${id}`);
     if (!res.ok) throw new Error('Monstruo no encontrado');
     const json = await res.json();
     const m = json.data;

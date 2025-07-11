@@ -1,11 +1,11 @@
 window.addEventListener('DOMContentLoaded', async () => {
   const lista = document.querySelector('.panel__list');
   const addBtn = document.querySelector('.panel__add');
-  const tabs = document.querySelector('.tabs__container'); // ✅ Aquí se usa correctamente
+  const tabs = document.querySelector('.tabs__container');
   const clases = new Set();
 
   try {
-    const res = await fetch("http://localhost:5000/api/monstruos");
+    const res = await fetch("/api/monstruos");
     const data = await res.json();
     const monstruos = data.data || [];
 
@@ -84,7 +84,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
             if (res.ok) {
               alert("Monstruo eliminado correctamente");
-              e.target.closest(".panel__item")?.remove(); // ✅ corregido
+              e.target.closest(".panel__item")?.remove();
             } else {
               const data = await res.json();
               alert("Error: " + data.message);
