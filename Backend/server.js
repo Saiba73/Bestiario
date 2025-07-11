@@ -31,5 +31,5 @@ if(process.env.NODE_ENV === "production"){
 //inicia el servidor
 app.listen(5000, () => {
     conectarDB();
-    console.log('servidor empezo en http://localhost:' + PORT);
+    console.log('servidor empezo en http://localhost:' + PORT + '/html');
 });

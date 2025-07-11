@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development Backend/server.js",
+    "dev": "NODE_ENV=production nodemon Backend/server.js",
     "build": "npm install",
     "start": "NODE_ENV=production node Backend/server.js"
   },
