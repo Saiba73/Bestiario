@@ -115,7 +115,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     deleteButton.addEventListener('click', async () => {
       if (!confirm('¿Borrar este monstruo?')) return;
       try {
-        const res = await fetch(`http://localhost:5000/api/monstruos/${id}`, {
+        const res = await fetch(`/api/monstruos/${id}`, {
           method: 'DELETE'
         });
         if (res.ok) {
