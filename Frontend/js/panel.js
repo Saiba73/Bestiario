@@ -78,7 +78,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         const id = e.target.dataset.id;
         if (confirm("¿Estás seguro de borrar este monstruo?")) {
           try {
-            const res = await fetch(`http://localhost:5000/api/monstruos/${id}`, {
+            const res = await fetch(`/api/monstruos/${id}`, {
               method: "DELETE"
             });
 
