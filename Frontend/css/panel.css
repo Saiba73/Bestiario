@@ -261,6 +261,46 @@ body::before {
   padding: 5px;
 }
 
+.panel__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 600px;
+  overflow-y: auto;
+  overflow-x: hidden; /* Evita scroll horizontal */
+  margin-bottom: 2rem;
+  padding: 5px;
+  /* Asegura que el scrollbar siempre esté visible */
+  scrollbar-width: thin; /* Para Firefox */
+  scrollbar-color: var(--naranja) var(--cafe); /* Para Firefox */
+}
+
+/* Webkit scrollbar (Chrome, Safari, Edge) */
+.panel__list::-webkit-scrollbar {
+  width: 15px;
+  border-radius: 10px;
+}
+
+.panel__list::-webkit-scrollbar-track {
+  background: var(--cafe);
+  border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+.panel__list::-webkit-scrollbar-thumb {
+  background: var(--naranja);
+  border-radius: 10px; /* Opcional: bordes redondeados */
+  border: 2px solid var(--cafe); /* Opcional: borde para mejor apariencia */
+}
+
+.panel__list::-webkit-scrollbar-thumb:hover {
+  background: var(--naranja); 
+}
+
+/* Asegurar que el contenido tenga suficiente altura para activar el scroll */
+.panel__list .panel__item {
+  flex-shrink: 0; /* Evita que los elementos se compriman */
+}
+
 .panel__item {
   display: flex;
   align-items: center;
