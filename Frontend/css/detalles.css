@@ -293,7 +293,6 @@ body {
 
 .detalle__boton-editar:hover {
   background: var(--amarillo);
-  color: black;
   filter: drop-shadow(0 0 8px rgba(232, 170, 39, 0.5));
 }
 
