@@ -340,8 +340,8 @@ body::before {
 }
 
 .panel__edit-button {
-  background: var(--naranja);
-  border: none;
+  background: linear-gradient(135deg, var(--naranja), var(--amarillo));
+  border-color: #ffdd00;
   color: white;
   padding: 0.4rem 0.8rem;
   font-size: 0.85rem;
@@ -351,7 +351,8 @@ body::before {
 }
 
 .panel__delete-button {
-  background: red;
+  background: linear-gradient(135deg, #b00000, #ff0000);
+  border-color: #ff4400;
   border: none;
   color: white;
   padding: 0.4rem 0.8rem;
