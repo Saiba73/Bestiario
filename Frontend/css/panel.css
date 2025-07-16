@@ -81,8 +81,9 @@ body::before {
 
 /* Título "Monster Dex" */
 .header__title {
+  font-weight: bold;
   margin: 0;
-  font-family: var(--fuente-logo);
+  font-family: var(--fuente-logo, serif);
   font-size: 1.8rem;
   color: var(--crema);
   text-shadow: 0 0 5px rgba(255, 215, 0, 0.2);
@@ -158,7 +159,7 @@ body::before {
 .panel__volver-btn:hover {
   background: linear-gradient(145deg, var(--naranja), var(--amarillo));
   transform: scale(1.1);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.6);
+  filter: drop-shadow(0 0 8px rgba(232, 170, 39, 0.5));
   color: black;
 }
 
@@ -172,6 +173,8 @@ body::before {
 }
 
 .panel__title {
+  font-family: var(--fuente-encabezado);
+  font-weight: bold;
   text-align: center;
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
@@ -188,17 +191,35 @@ body::before {
 }
 
 .tabs__button {
+  position: relative; 
   background: linear-gradient(145deg, rgba(254, 224, 134, 0.9), rgba(232, 170, 39, 0.7));
   border: 2px solid var(--bronce);
   padding: 0.6rem 1.2rem;
   border-radius: 8px;
   cursor: pointer;
   color: var(--cafe);
+  font-family: var(--fuente-logo);
   font-weight: bold;
   font-size: 0.9rem;
   transition: all 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   text-transform: uppercase;
+  overflow: hidden;
+}
+
+.tabs__button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.4), transparent);
+  transition: left 0.6s ease;
+}
+
+.tabs__button:hover::before {
+  left: 100%;
 }
 
 .tabs__button:hover {
@@ -236,6 +257,7 @@ body::before {
   max-height: 600px;
   overflow-y: auto;
   margin-bottom: 2rem;
+  padding: 5px;
 }
 
 .panel__item {
@@ -340,12 +362,16 @@ body::before {
 }
 
 .panel__edit-button:hover {
-  background: var(--amarillo);
-  color: black;
+  color: var(--hueso);
+  background: linear-gradient(135deg, var(--bronce), var(--amarillo));
+  transform: translateY(-2px);
+  filter: drop-shadow(0 0 8px rgba(232, 170, 39, 0.5));
 }
 
 .panel__delete-button:hover {
-  background: #b23200;
+  background: linear-gradient(135deg, #b23200, #f10000);
+  transform: translateY(-2px);
+  filter: drop-shadow(0 0 8px rgba(232, 39, 39, 0.5));
 }
 
 .panel__add {
@@ -403,10 +429,10 @@ body::before {
   background: linear-gradient(145deg, rgba(118, 221, 143, 0.4), rgba(118, 221, 143, 0.2));
   border-color: var(--verde);
   border-style: solid;
+  border-radius: 6px; 
   transform: translateY(-5px) scale(1.02);
-  box-shadow: 
-    0 8px 16px rgba(0, 0, 0, 0.6),
-    0 0 20px rgba(118, 221, 143, 0.4);
+  filter:drop-shadow(    0 8px 16px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(118, 221, 143, 0.4));
   color: var(--crema);
 }
 
@@ -428,4 +454,10 @@ body::before {
   text-align: center;
   padding: 1rem;
   margin-top: 15px;
+}
+
+.footer__text {
+  margin: 0;
+  font-family: var(--fuente-texto);
+  color: var(--crema);
 }

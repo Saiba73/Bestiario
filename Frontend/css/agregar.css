@@ -52,20 +52,46 @@ body::before {
   position: sticky;
   top: 0;
   z-index: 100;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.header__title {
-  margin: 0;
-  font-size: 1.8rem;
-  color: var(--amarillo);
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  font-weight: bold;
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.header__logo:hover {
+  transform: scale(1.03);
+  filter: drop-shadow(0 4px 8px rgba(241, 205, 0, 0.833));
+}
+
+/* Imagen del logo */
+.header__logo-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.3));
+}
+
+/* Título "Monster Dex" */
+.header__title {
+  font-weight: bold;
+  margin: 0;
+  font-family: var(--fuente-logo, serif);
+  font-size: 1.8rem;
+  color: var(--crema);
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.2);
+}
+
 
 /* === Formulario === */
 .formulario {
+  font-family: var(--fuente-texto);
   background-color: rgba(255, 255, 255, 0.05);
   padding: 2.5rem;
   border-radius: 15px;
@@ -91,6 +117,7 @@ body::before {
 }
 
 .formulario__titulo {
+  font-family: var(--fuente-encabezado);
   font-size: 2.2rem;
   color: var(--oro);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
@@ -119,6 +146,7 @@ body::before {
 }
 
 .formulario__label {
+  font-family: var(--fuente-logo);
   margin-bottom: 0.5rem;
   font-weight: bold;
   color: var(--crema);
@@ -296,37 +324,6 @@ input[type="file"]:hover {
 
 .footer__text {
   margin: 0;
+  font-family: var(--fuente-texto);
   color: var(--crema);
-}
-
-
-/* Responsive */
-@media (max-width: 768px) {
-  .formulario {
-    margin: 1rem;
-    padding: 1.5rem;
-  }
-  
-  .formulario__fila {
-    flex-direction: column;
-    gap: 0;
-  }
-  
-  .formulario__fila--tercios .formulario__grupo {
-    flex: 1 1 100%;
-    min-width: auto;
-  }
-  
-  .formulario__acciones {
-    flex-direction: column;
-  }
-  
-  .formulario__boton {
-    width: 100%;
-  }
-  
-  .formulario__titulo {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-  }
 }

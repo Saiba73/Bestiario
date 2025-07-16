@@ -132,6 +132,10 @@ body {
 }
 
 .detalle__img {
+  background-image: url(../img/Fondos/pergamino.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   width: 756px; 
   height: 570px;
   max-width: 100%;
@@ -158,6 +162,7 @@ body {
 .detalle__volver:hover {
   transform: translateY(-2px);
   background: linear-gradient(135deg, var(--naranja), var(--amarillo));
+  filter: drop-shadow(0 0 8px rgba(232, 170, 39, 0.5));
 }
 
 .detalle__estrellas {
@@ -308,10 +313,12 @@ body {
 .detalle__boton-editar:hover {
   background: var(--amarillo);
   color: black;
+  filter: drop-shadow(0 0 8px rgba(232, 170, 39, 0.5));
 }
 
 .detalle__boton-borrar:hover {
   background: #b23200;
+  filter: drop-shadow(0 0 8px rgba(232, 39, 39, 0.5));
 }
 
 .footer {
@@ -325,5 +332,5 @@ body {
 .footer__text {
   margin: 0;
   font-family: var(--fuente-texto);
-  font-style: italic;
+  color: var(--crema);
 }

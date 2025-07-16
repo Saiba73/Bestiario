@@ -13,7 +13,7 @@ app.use(cors());
 const PORT = process.env.PORT || 5000;
 
 const __dirname = path.resolve();
-app.use(express.json()); // permite aceptar datos en formato json en la petiicon del usuario
+app.use(express.json()); // permite aceptar datos en formato json en la peticion del usuario
 
 
 app.use("/api/auth", usuarioRutas);

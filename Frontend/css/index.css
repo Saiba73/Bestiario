@@ -64,8 +64,9 @@ body {
 
 /* Título "Monster Dex" */
 .header__title {
+  font-weight: bold;
   margin: 0;
-  font-family: var(--fuente-logo);
+  font-family: var(--fuente-logo, serif);
   font-size: 1.8rem;
   color: var(--crema);
   text-shadow: 0 0 5px rgba(255, 215, 0, 0.2);
@@ -185,7 +186,7 @@ body {
   border-radius: 8px;
   cursor: pointer;
   color: var(--cafe);
-  font-family: var(--fuente-encabezado);
+  font-family: var(--fuente-logo);
   font-weight: bold;
   font-size: 0.9rem;
   transition: all 0.3s ease;
@@ -435,6 +436,7 @@ body {
 .footer__text {
   margin: 0;
   font-family: var(--fuente-texto);
+  color: var(--crema);
 }
 
 .monster-card:hover {

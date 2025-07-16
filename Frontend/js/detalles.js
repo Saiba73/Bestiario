@@ -20,9 +20,6 @@ window.addEventListener('DOMContentLoaded', async () => {
     document.querySelector('.detalle__estrellas').textContent =
       '★'.repeat(m.DIFICULTAD) + '☆'.repeat(5 - m.DIFICULTAD);
 
-
-
-
     // Mostrar nombre y elementos afines en la misma fila
     const nombreContenedor = document.querySelector('.detalle__nombre');
     nombreContenedor.innerHTML = '';
