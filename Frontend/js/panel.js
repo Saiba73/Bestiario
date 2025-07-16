@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', async () => {
           <button class="panel__delete-button" data-id="${m._id}">Borrar</button>
         </div>
       `;
-      lista.insertBefore(item, addBtn);
+      // lista.insertBefore(item, addBtn);
       clases.add(m.CLASSIFICACION);
     });
 
