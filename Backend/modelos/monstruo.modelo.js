@@ -4,7 +4,7 @@ const monstruoSchema = new mongoose.Schema({
     NOMBRE:{
         type: String,
         required: true,
-        unique: false,
+        unique: true,
         trim: true,
         minlength: 1
     },
