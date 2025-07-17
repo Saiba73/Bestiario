@@ -210,3 +210,17 @@ body {
   font-family: var(--fuente-texto);
   color: var(--crema);
 }
+
+.footer__disclaimer {
+  font-size: 0.9rem;
+  color: var(--hueso);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  border-top: 1px solid var(--verde);
+  line-height: 1.6;
+}
+
+.footer__disclaimer strong {
+  color: var(--oro);
+}

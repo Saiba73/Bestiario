@@ -274,13 +274,13 @@ body::before {
 
 .panel__list::-webkit-scrollbar-track {
   background: var(--cafe);
-  border-radius: 15px; /* Opcional: bordes redondeados */
+  border-radius: 15px; 
 }
 
 .panel__list::-webkit-scrollbar-thumb {
   background: var(--oro);
-  border-radius: 15px; /* Opcional: bordes redondeados */
-  border: 2px solid var(--cafe); /* Opcional: borde para mejor apariencia */
+  border-radius: 15px; 
+  border: 2px solid var(--cafe);
 }
 
 .panel__list::-webkit-scrollbar-thumb:hover {
@@ -496,4 +496,18 @@ body::before {
   margin: 0;
   font-family: var(--fuente-texto);
   color: var(--crema);
+}
+
+.footer__disclaimer {
+  font-size: 0.9rem;
+  color: var(--hueso);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  border-top: 1px solid var(--verde);
+  line-height: 1.6;
+}
+
+.footer__disclaimer strong {
+  color: var(--oro);
 }
