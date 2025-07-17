@@ -11,33 +11,36 @@
   <link rel="stylesheet" href="../css/login.css">
   <link rel="icon" type="image/png" href="../img/Fondos/Favicon.png"> 
 </head>
-<body class="d-flex justify-content-center align-items-center" style="min-height:100vh;">
+
+<body class="d-flex flex-column" style="min-height:100vh;">
   <header class="header">
     <a href="../html/index.html" class="header__logo">
       <img src="../img/Fondos/Icono_Header.png" alt="Logo" class="header__logo-img">
       <h1 class="header__title">MONSTER DEX</h1>
     </a>
   </header>
+  <main class="flex-grow-1 d-flex justify-content-center align-items-center">
+      <div class="card p-4">
+        <div class="card-header">
+          <a href="../html/index.html" class="panel__volver-btn" title="Volver">
+            <i class="bi bi-arrow-left"></i>
+          </a>
+          <h3 class="card-title">Administrador</h3>
+        </div>
+        <form id="login-form">
+          <div class="mb-3">
+            <label for="user" class="form-label">Usuario</label>
+            <input type="text" id="user" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="pass" class="form-label">Contraseña</label>
+            <input type="password" id="pass" class="form-control" required>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Ingresar</button>
+        </form>
+      </div>
+  </main>
 
-  <div class="card p-4">
-    <div class="card-header">
-      <a href="../html/index.html" class="panel__volver-btn" title="Volver">
-        <i class="bi bi-arrow-left"></i>
-      </a>
-      <h3 class="card-title">Administrador</h3>
-    </div>
-    <form id="login-form">
-      <div class="mb-3">
-        <label for="user" class="form-label">Usuario</label>
-        <input type="text" id="user" class="form-control" required>
-      </div>
-      <div class="mb-3">
-        <label for="pass" class="form-label">Contraseña</label>
-        <input type="password" id="pass" class="form-control" required>
-      </div>
-      <button type="submit" class="btn btn-primary w-100">Ingresar</button>
-    </form>
-  </div>
 
   <footer class="footer">
     <p class="footer__text">MONSTER DEX</p>

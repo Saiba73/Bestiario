@@ -25,9 +25,6 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
 .header {
@@ -38,7 +35,7 @@ body {
   color: white;
   padding: 1rem;
   width: 100%;
-  position: fixed;
+  position: static; 
   top: 0;
   left: 0;
   z-index: 100;
@@ -93,14 +90,17 @@ body {
   text-decoration: none;
 }
 
+
 .card {
   width: 400px;
-  height: 415px;
+  max-width: 90%;
+  height: auto;
+  min-height: 415px;
   background-color: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(4px);
   border-radius: 15px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-  margin-top: -3.5rem;
+  margin: 2rem 0;
 }
 
 .card-header {
@@ -200,9 +200,8 @@ body {
   text-align: center;
   padding: 1rem;
   width: 100%;
-  position: fixed;
-  bottom: -20px;
-  left: 0;
+  position: relative; 
+  bottom: auto;
 }
 
 .footer__text {
@@ -212,13 +211,13 @@ body {
 }
 
 .footer__disclaimer {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: var(--hueso);
   text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
+  padding: 0.5rem;
+  margin-top: 1rem;
   border-top: 1px solid var(--verde);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .footer__disclaimer strong {
